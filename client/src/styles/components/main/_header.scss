@@ -1,0 +1,116 @@
+.header__container {
+  display: flex;
+  justify-content: space-between;
+  padding: 2vw;
+  border-bottom: 2px solid #f5821e;
+
+  svg {
+    font-size: 2rem;
+    cursor: pointer;
+  }
+
+  .header__search-movie {
+    display: flex;
+    align-items: center;
+    width: 50px;
+    justify-content: center;
+    position: relative;
+    svg {
+      font-size: 1.5rem;
+    }
+  }
+  .header__right-side {
+    display: flex;
+    justify-content: space-between;
+
+    .header__select-movie,
+    .header__covid-19-restriction,
+    .header__select-theater {
+      position: relative;
+      border: 1px solid #6d6d6d;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 0 20px;
+
+      &::after {
+        content: "❯";
+        transform: rotate(270deg);
+        margin: 0px 15px 0px 0px;
+      }
+    }
+    .header__covid-19-restriction {
+      &::after {
+        content: "";
+      }
+    }
+
+    .header__select-theater {
+      .theaters__dropdown__container {
+        display: none;
+        z-index: 1;
+        position: absolute;
+        top: 33px;
+        background: #363636;
+        padding: 0 20px;
+        padding-bottom: 8px;
+        border: 1px solid #6d6d6d;
+        right: 0;
+        width: 170px;
+
+        span {
+          padding-top: 8px;
+          font-size: 1.2rem;
+          display: flex;
+
+          &:hover {
+            color: #f5821e;
+          }
+        }
+      }
+      &:hover {
+        .theaters__dropdown__container {
+          display: block;
+        }
+      }
+    }
+  }
+  .header__right-side > div {
+    cursor: pointer;
+    margin-left: 35px;
+  }
+
+  .header__left-side {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 120px;
+    font-size: 1.1rem;
+
+    span {
+      font-family: cursive;
+      font-weight: bolder;
+      cursor: pointer;
+    }
+  }
+}
+@media (max-width: 800px) {
+  .header__container {
+    .header__right-side > div {
+      margin-left: 20px;
+    }
+  }
+}
+@media (max-width: 700px) {
+  .header__container {
+
+    .header__right-side {
+      .header__select-movie,
+      .header__covid-19-restriction,
+      .header__search-movie,
+      .header__select-theater {
+        display: none;
+      }
+    }
+  }
+}

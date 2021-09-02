@@ -1,0 +1,166 @@
+.order-tickets-page__container {
+  ::-webkit-scrollbar {
+    display: none;
+  }
+  .order-tickets-main {
+    display: flex;
+    padding: 5px;
+    justify-content: space-evenly;
+
+    .order-ticket__button {
+      left: 0;
+      margin-bottom: 20px;
+    }
+
+    .ticket-details {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      border: 1px solid;
+      padding: 10px 15px 0px 15px;
+      // margin-left: 30px;
+
+      .ticket-description {
+        p {
+          margin: 4px;
+        }
+      }
+
+      .select-ticket-type {
+        span {
+          width: 125px;
+          display: inline-block;
+        }
+        span:nth-child(3) {
+          width: fit-content;
+        }
+      }
+    }
+  }
+
+  h2 {
+    overflow: hidden;
+    text-align: center;
+    margin-bottom: 30px;
+    margin-top: 30px;
+
+    span {
+      background: #28292b;
+      z-index: 1;
+      padding: 0 15px;
+      position: relative;
+    }
+
+    &::before,
+    &::after {
+      border-top: 2px solid;
+      border-bottom: 2px solid;
+      content: "";
+      display: inline-block;
+      height: 10px;
+      position: relative;
+      width: 50%;
+      margin-top: -5px;
+    }
+
+    &::before {
+      right: 0.5em;
+      margin-left: -53%;
+    }
+    &::after {
+      left: 0.5em;
+      margin-right: -53%;
+    }
+  }
+
+  .select-seats__container {
+    position: relative;
+    width: fit-content;
+    background: black;
+
+    h1 {
+      text-align: center;
+      font-size: 1.6rem;
+    }
+    .control-size {
+      display: flex;
+      justify-content: space-between;
+
+      div {
+        margin: 15px;
+      }
+      span {
+        min-width: 50px;
+        background: white;
+        color: black;
+        padding: 4px 8px;
+        margin: 5px;
+        text-align: center;
+        vertical-align: middle;
+        cursor: pointer;
+      }
+    }
+  }
+  .select-seats__overflow-container {
+    margin: auto;
+    padding: 0px 30px 50px 30px;
+    max-height: 450px;
+    max-width: 750px;
+    background: black;
+    overflow: scroll;
+    display: flex;
+    margin-top: 25px;
+    position: relative;
+    ::-webkit-scrollbar {
+      display: none;
+    }
+
+    .seats {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+    }
+
+    .seats__size-1 {
+      height: 30px;
+      width: 30px;
+      margin: 5px;
+      font-size: 0.6rem;
+    }
+    .seats__size-2 {
+      height: 40px;
+      width: 40px;
+      margin: 6px;
+      font-size: 0.8rem;
+    }
+    .seats__size-3 {
+      height: 50px;
+      width: 50px;
+      margin: 8px;
+      font-size: 1rem;
+    }
+    .select-seats__inner {
+      display: flex;
+      align-items: baseline;
+      height: fit-content;
+
+      .select-seats__seats-container {
+        display: grid;
+        grid-template-columns: repeat(15, 1fr);
+        direction: ltr;
+        .seats {
+          background: #baa47b;
+        }
+
+        .selected{
+          background: red;
+        }
+        .occupied{
+          background: #9e9e9e;
+          cursor: auto;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,82 @@
+.select-screening-dates__container {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  ::-webkit-scrollbar {
+    display: none;
+  }
+
+  .close-icon {
+    position: absolute;
+    left: 15px;
+    top: 5px;
+    font-size: 2rem;
+    cursor: pointer;
+  }
+
+  .order-movie {
+    width: 100%;
+    height: 100%;
+    background: #363636;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    padding: 40px;
+
+    h1 {
+      align-self: baseline;
+    }
+
+    .order-ticket__selects-container {
+      width: 100%;
+      height: 65%;
+      margin: 20px 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+    }
+
+    .select-cinema,
+    .select-movie {
+      width: 100%;
+    }
+
+    .order-movie__select-date {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+
+      div {
+        width: 48%;
+      }
+    }
+    .custom-select {
+      cursor: pointer;
+      outline: none;
+      background-color: #231f20;
+      border: 0;
+      padding: 8px 15px;
+      color: #fff;
+      width: 100%;
+      font-size: 1.3rem;
+      font-weight: 400;
+      line-height: 1.3;
+      -webkit-appearance: none;
+
+      &:focus {
+        border: 2px solid #848182;
+      }
+
+      option {
+        font-size: 1.3rem;
+      }
+    }
+  }
+  .order-ticket {
+    width: 85%;
+    .order-ticket__button {
+      left: 0;
+    }
+  }
+}
