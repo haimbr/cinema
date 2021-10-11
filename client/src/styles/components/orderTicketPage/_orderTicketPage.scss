@@ -153,12 +153,38 @@
           background: #baa47b;
         }
 
-        .selected{
+        .selected {
           background: red;
         }
-        .occupied{
+        .occupied {
           background: #9e9e9e;
           cursor: auto;
+        }
+      }
+    }
+  }
+
+  @media (max-width: 700px) {
+    .order-tickets-main {
+      flex-direction: column;
+      align-items: center;
+
+      .ticket-details {
+        .order-ticket {
+          position: fixed;
+          bottom: 0;
+          width: 100%;
+          left: 0;
+          z-index: 1;
+          background: black;
+          padding-top: 20px;
+        }
+      }
+      .select-seats__container {
+        transform: scale(0.5);
+        top: -100px;
+        .select-seats__overflow-container{
+          padding: 0;
         }
       }
     }

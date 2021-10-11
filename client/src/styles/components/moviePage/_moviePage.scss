@@ -26,8 +26,14 @@
 
       p {
         margin: 0;
-        padding: 10px 0 10px 15px;
+        padding: 10px 0 0px 15px;
         font-size: 1.2rem;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 9;
+        -webkit-box-orient: vertical;
+        padding-bottom: 0;
       }
       h2 {
         margin: 0 0 12px 0;
@@ -115,7 +121,7 @@
     }
   }
   .movie-page__buy-tickets {
-    position: absolute;
+    position: fixed;
     height: 100%;
     width: 100%;
     top: 0;

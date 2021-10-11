@@ -5,11 +5,17 @@ client/node_modules
 client/pnp
 client/pnp.js
 
+admin/node_modules
+admin/pnp
+admin/pnp.js
+
 # testing
 client/coverage
+admin/coverage
 
 # production
 client/build
+admin/build
 
 # misc
 client/.DS_Store
@@ -18,9 +24,19 @@ client/env.development.local
 client/env.test.local
 client/env.production.local
 
+admin/.DS_Store
+admin/env.local
+admin/env.development.local
+admin/env.test.local
+admin/env.production.local
+
 client/npm-debug.log*
 client/yarn-debug.log*
 client/yarn-error.log*
+
+admin/npm-debug.log*
+admin/yarn-debug.log*
+admin/yarn-error.log*
 
 server/node_modules
 server/config

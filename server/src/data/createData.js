@@ -68,8 +68,8 @@ const crawlDate = async (MovieId) => {
         const trailerLink = $(paths.trailerLink).attr('src');
         const description = $(paths.description).html();
         const targetAudience = $(paths.targetAudience).html().trim();
-        const movieLength = $(paths.movieLength).html().replace("דקות", "");;
-        const premiereDate = $(paths.premiereDate).html().replace("בכורה:", "");;
+        const movieLength = $(paths.movieLength).html().replace("דקות", "");
+        const premiereDate = $(paths.premiereDate).html().replace("בכורה:", "");
         const ageRestriction = $(paths.ageRestriction).html().replace("הגבלת גיל:", "");
 
 

@@ -24,8 +24,12 @@
     flex-direction: column;
     padding: 40px;
 
-    h1 {
+    h1, h2 {
       align-self: baseline;
+    }
+
+    h2{
+      margin: 0;
     }
 
     .order-ticket__selects-container {

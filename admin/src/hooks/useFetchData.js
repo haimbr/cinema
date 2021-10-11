@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { serverUrl } from './../data/data';
+import { serverUrl } from '../data';
 const axios = require('axios');
 
 
@@ -12,6 +12,7 @@ const useFetchData = (path) => {
             try {
                 const response = await axios.get(serverUrl + path, {
                     cancelToken: newRequest.token,
+                    withCredentials: true,
                 })
                 setData(response.data)
             } catch (err) {

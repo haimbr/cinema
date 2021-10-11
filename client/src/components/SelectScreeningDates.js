@@ -85,9 +85,10 @@ const SelectScreeningDates = ({ movieName, theater, setIsOrderTicketOpen }) => {
     return (
         <>
             <div className="select-screening-dates__container">
-                <span className="close-icon" onClick={() => setIsOrderTicketOpen(false)}>&#10005;</span>
+                {setIsOrderTicketOpen && <span className="close-icon" onClick={() => setIsOrderTicketOpen(false)}>&#10005;</span>}
                 <div className="order-movie">
                     <h1 >רכישת כרטיס </h1>
+                    {movieName && <h2>שם הסרט: {movieName}</h2>}
                     <div className="order-ticket__selects-container">
                         {!theater && <div className="select-cinema">
                             <select className="custom-select" defaultValue="בחרו קולונע"

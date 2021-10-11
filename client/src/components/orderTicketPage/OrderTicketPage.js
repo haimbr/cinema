@@ -4,12 +4,16 @@ import useFetchData from '../../hooks/useFetchData';
 import Loader from '../main/Loader';
 import SelectTicket from './SelectTicket';
 import { sendOrderToServer } from './../../api/postOrder';
+import { useHistory } from 'react-router-dom';
 
 
 
 
 
 const OrderTicketPage = ({ match }) => {
+
+    const history = useHistory();
+
     const movieName = match.params.movieName;
     const eventId = match.params.eventId;
 
@@ -24,21 +28,25 @@ const OrderTicketPage = ({ match }) => {
     const onSelectSeatsClicked = (position) => {
         if (selectedSeats.includes(position)) {
             setSelectedSeats((prev) => prev.filter((seat) => seat !== position))
-        } else {
+        } else if(!screeningEvent.seatPlan?.includes(position)){
             setSelectedSeats((prev) => [...prev, position]);
         }
     }
 
 
     const onFinishOrderClicked = async () => {
-        console.log("selectedSeats",selectedSeats);
-        console.log("ticketsCount", ticketsCount);
         if (ticketsCount === 0) return alert("יש לבחור סוג כרטיס");
         if (selectedSeats.length === 0) return alert("יש לבחור מושבים");
         if (selectedSeats.length !== ticketsCount) return alert("מספר המושבים שבחרת אינו תואם את מספר הכרטיסים שבחרת");
 
-        sendOrderToServer(movieName, eventId, selectedSeats);
-
+        const res = await sendOrderToServer(movieName, eventId, selectedSeats);
+        if(res.status === 200){
+            alert("ההזמנה הושלמה");
+            history.push('/')
+        }else{
+            alert("משהו השתבש נסה שוב");
+            window.location.reload();
+        }
     }
 
     return (
